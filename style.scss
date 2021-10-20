@@ -29,6 +29,10 @@ body{
                 @include lightgrey;
                 a{
                     text-decoration: none;
+                    h1{
+                        border-radius: 10px;
+                        padding: 10px;
+                    }
                 }
             }
             .menu{
@@ -84,6 +88,10 @@ body{
     main{
         article{
             @include lightgreyTransp;
+            width: 90%;
+            margin: 10px auto;
+            padding: 5px;
+            border-radius: 10px;
             img{
                 width: 30%;
             }
@@ -91,7 +99,15 @@ body{
         .eyecatcher{
             height: 800px;
         }
-    
+        #codingSkills{
+            
+            .grid{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                place-items: center center;
+                
+            }
+        }
         
     }
     a:hover, a:hover h1{
