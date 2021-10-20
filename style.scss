@@ -1,0 +1,101 @@
+@mixin lightgreyTransp {
+    background-color: rgba(211, 211, 211, 0.8);
+    
+}
+@mixin lightgrey{
+    color:grey
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+body{
+    margin:0;
+    font-family: 'Ubuntu', sans-serif;
+    background-image: url("./background.jpeg");
+    background-size: contain;
+    @include lightgrey;
+
+// HEADER
+    header{
+        position: sticky;
+        top:0;
+        .visualHeader{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:0 20px;
+            .title{
+                font-size: 3rem;
+                @include lightgrey;
+                a{
+                    text-decoration: none;
+                }
+            }
+            .menu{
+                input{
+                    display: none;
+                }
+                input:checked ~ label .fas{
+                    transform: rotate(-180deg);
+                }
+                input:checked ~ nav{
+                    opacity: 1;
+                }
+                .fas{
+                    font-size: 3rem;
+                }
+                label{
+                    .fas{
+                        transition: 1s;
+                    }   
+                }
+                nav{
+                    position: absolute;
+                    right: 0;
+                    opacity: 0;
+                    transition: 1s;
+                    @include lightgreyTransp;
+                    border-radius: 10px;
+                    z-index: 10;
+                    ul{
+                        height: 40vh;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        padding: 0;
+                        li{
+                            list-style-type: none;
+                            a{
+                                @include lightgrey;
+                                text-decoration: none;
+                                font-size: 1.5rem;
+                                padding:5px;
+                                border-radius: 10px;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+    
+// MAIN
+    main{
+        article{
+            @include lightgreyTransp;
+            img{
+                width: 30%;
+            }
+        }
+        .eyecatcher{
+            height: 800px;
+        }
+    
+        
+    }
+    a:hover, a:hover h1{
+        box-shadow: 0 0 5px red inset;
+        color:white !important;
+    }
+}
